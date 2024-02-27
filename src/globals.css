@@ -82,7 +82,7 @@
   }
 
   .flex-between {
-    @apply flex justify-between items-center;
+    @apply flex justify-between items-center bg-orange-1;
   }
 
   .flex-start {
@@ -188,7 +188,7 @@
 
   /* Bottom bar */
   .bottom-bar {
-    @apply z-50 flex-between w-full sticky bottom-0 rounded-t-[20px] bg-dark-2 px-5 py-4 md:hidden;
+    @apply z-50 flex-between w-full sticky bottom-0 rounded-t-[20px] bg-orange-1 px-5 py-4 md:hidden;
   }
 
   /* File uploader */
@@ -219,11 +219,11 @@
 
   /* Left sidebar */
   .leftsidebar {
-    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
+    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-orange-1;
   }
 
   .leftsidebar-link {
-    @apply rounded-lg base-medium hover:bg-primary-500 transition;
+    @apply rounded-lg base-medium hover:bg-orange-1 transition;
   }
 
   /* Post Card */

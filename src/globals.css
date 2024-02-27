@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-dark-1 text-white min-h-screen font-inter;
+    @apply  text-dark-1 min-h-screen font-inter;
   }
 }
 
@@ -250,7 +250,7 @@
   /* SHADCN COMPONENTS */
   /* Form */
   .shad-form_label {
-    @apply text-white !important;
+    @apply text-dark-1 !important;
   }
 
   .shad-form_message {
@@ -258,7 +258,7 @@
   }
 
   .shad-input {
-    @apply h-12 bg-dark-4 border-none placeholder:text-light-4 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+    @apply h-12 bg-white border-dark-1 placeholder:text-light-4 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
   }
 
   .shad-textarea {
@@ -267,7 +267,7 @@
 
   /* Button */
   .shad-button_primary {
-    @apply bg-primary-500 hover:bg-primary-500 text-light-1 flex gap-2 !important;
+    @apply bg-orange-1 text-dark-1 flex gap-2 !important;
   }
 
   .shad-button_dark_4 {

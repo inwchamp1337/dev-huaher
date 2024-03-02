@@ -29,7 +29,7 @@
   }
 
   .h3-bold {
-    @apply text-[24px] font-bold leading-[140%] tracking-tighter;
+    @apply text-[24px] font-bold leading-[140%] tracking-tighter ;
   }
 
   .base-semibold {

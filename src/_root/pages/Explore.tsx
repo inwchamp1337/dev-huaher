@@ -65,8 +65,7 @@ const Explore = () => {
             className="explore-search"
             value={searchValue}
             onChange={(e) => {
-              const { value } = e.target;
-              setSearchValue(value);
+              setSearchValue(e.target.value);
             }}
           />
         </div>

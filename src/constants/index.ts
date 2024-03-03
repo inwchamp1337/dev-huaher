@@ -40,7 +40,7 @@ export const bottombarLinks = [
   {
     imgURL: "/assets/icons/bookmark.svg",
     route: "/saved",
-    label: "notification",
+    label: "Save",
   },
   {
     imgURL: "/assets/icons/gallery-add.svg",

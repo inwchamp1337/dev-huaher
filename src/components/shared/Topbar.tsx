@@ -22,7 +22,8 @@ const Topbar = () => {
             src="/assets/images/huehiw_logo2.svg"
             alt="logo"
             width={100}
-            height={100}                  
+            height={100}
+            className="w-13 lg:h-12 rounded-full"                  
           />
           <p className="positioned-text">Huehiw</p>
         </Link>

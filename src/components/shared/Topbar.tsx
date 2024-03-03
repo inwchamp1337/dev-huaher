@@ -17,11 +17,11 @@ const Topbar = () => {
   return (
     <section className="topbar">
       <div className="flex-between py-4 px-5">
-        <Link to="/" className="flex gap-10 items-center">
+        <Link to="/" className="flex gap-3 items-center">
           <img
             src="/assets/images/huehiw_logo2.svg"
             alt="logo"
-            width={100}
+            width={70}
             height={100}
             className="w-13 lg:h-12 rounded-full"                  
           />

@@ -82,7 +82,7 @@
   }
 
   .flex-between {
-    @apply flex justify-between items-center text-xl font-extrabold text-white p-2 rounded-full shadow-2xl;
+    @apply flex justify-between items-center text-xl font-extrabold text-white p-2 shadow-2xl;
     border: 2px solid #ffffff;
     box-shadow: 0 20px 40px rgba(150, 122, 182, 0.4);
   }
@@ -190,7 +190,7 @@
 
   /* Bottom bar */
   .bottom-bar {
-    @apply z-50 flex-between w-full sticky bottom-0 rounded-t-[20px] bg-orange-1 px-5 py-4 md:hidden;
+    @apply z-50 flex-between w-full sticky bottom-0 bg-orange-1 px-5 py-3 md:hidden;
   }
 
   /* File uploader */
@@ -242,7 +242,7 @@
     @apply sticky top-0 z-50 md:hidden bg-orange-1 w-full;
   }
   .positioned-text {
-    @apply text-5xl font-extrabold text-white p-4 rounded-full shadow-2xl bg-gradient-to-r;
+    @apply text-5xl font-extrabold text-white p-4 shadow-2xl bg-gradient-to-r;
     border: px solid #ffffff;
     box-shadow: 0 20px 40px rgba(150, 122, 182, 0.4);
   }

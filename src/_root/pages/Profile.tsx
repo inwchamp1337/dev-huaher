@@ -55,7 +55,7 @@ const Profile = () => {
               <h1 className="text-center xl:text-left h3-bold md:h1-semibold w-full">
                 {currentUser.name}
               </h1>
-              <p className="small-regular md:body-medium text-light-3 text-center xl:text-left">
+              <p className="small-regular md:body-medium text-dark-3 text-center xl:text-left">
                 @{currentUser.username}
               </p>
             </div>
@@ -99,7 +99,7 @@ const Profile = () => {
       </div>
 
       {currentUser.$id === user.id && (
-        <div className="flex max-w-5xl w-full">
+        <div className="flex max-w-5xl w-full text-light-3">
           <Link
             to={`/profile/${id}`}
             className={`profile-tab rounded-l-lg ${

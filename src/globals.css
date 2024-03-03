@@ -82,7 +82,9 @@
   }
 
   .flex-between {
-    @apply flex justify-between items-center bg-orange-1;
+    @apply flex justify-between items-center text-xl font-extrabold text-white p-2 rounded-full shadow-2xl hover:scale-110 hover:bg-purple-800 transition-transform duration-300;
+    border: 2px solid #ffffff;
+    box-shadow: 0 20px 40px rgba(150, 122, 182, 0.4);
   }
 
   .flex-start {
@@ -228,7 +230,7 @@
 
   /* Post Card */
   .post-card {
-    @apply bg-orange-1 rounded-3xl border border-dark-4 p-5 lg:p-7 w-full max-w-screen-sm;
+    @apply bg-gradient-to-br from-orange-1 to-orange-400 rounded-3xl border border-dark-4 p-5 lg:p-7 w-full max-w-screen-sm shadow-lg hover:shadow-xl transition-all duration-300 text-white;
   }
 
   .post-card_img {
@@ -237,11 +239,11 @@
 
   /* Topbar */
   .topbar {
-    @apply sticky top-0 z-50 md:hidden bg-dark-2 w-full;
+    @apply sticky top-0 z-50 md:hidden bg-orange-1 w-full;
   }
   .positioned-text {
     @apply text-5xl font-extrabold text-white p-6 rounded-full shadow-2xl bg-gradient-to-r from-pink-500 to-purple-700 hover:scale-110 hover:bg-purple-800 transition-transform duration-300;
-    border: 3px solid #ffffff;
+    border: px solid #ffffff;
     box-shadow: 0 20px 40px rgba(150, 122, 182, 0.4);
   }
   .positioned-text:hover {

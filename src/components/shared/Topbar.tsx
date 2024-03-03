@@ -17,12 +17,12 @@ const Topbar = () => {
   return (
     <section className="topbar">
       <div className="flex-between py-4 px-5">
-        <Link to="/" className="flex gap-3 items-center">
+        <Link to="/" className="flex gap-10 items-center">
           <img
             src="/assets/images/huehiw_logo2.svg"
             alt="logo"
             width={100}
-            height={100}
+            height={100}                  
           />
           <p className="positioned-text">Huehiw</p>
         </Link>

@@ -263,7 +263,7 @@
   }
 
   .shad-textarea {
-    @apply h-36 bg-dark-3 rounded-xl border-none focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 bg-orange-1 !important;
+    @apply h-36 bg-dark-3 rounded-xl border-dark-1 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 bg-light-1 !important;
   }
 
   /* Button */

@@ -82,8 +82,7 @@
   }
 
   .flex-between {
-    @apply flex justify-between items-center text-xl font-extrabold text-white p-2 shadow-2xl;
-      box-shadow: 0 20px 40px rgba(150, 122, 182, 0.4);
+    @apply flex justify-between items-center text-xl font-extrabold text-white p-2;
   }
 
   .flex-start {

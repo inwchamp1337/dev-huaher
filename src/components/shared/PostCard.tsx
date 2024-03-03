@@ -76,6 +76,10 @@ const PostCard = ({ post }: PostCardProps) => {
         />
       </Link>
 
+      <p>
+        {post.price} ฿ <br/>
+      </p>
+
       <PostStats post={post} userId={user.id} />
     </div>
   );

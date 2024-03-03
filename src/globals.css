@@ -133,7 +133,7 @@
   }
 
   .explore-search {
-    @apply h-12 bg-dark-4 border-none placeholder:text-light-4 focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 !important;
+    @apply h-12 border-none placeholder:text-light-4 focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 hover:scale-110 hover:bg-white transition-transform duration-300 !important;
   }
 
   /* Home */
@@ -252,7 +252,7 @@
 
   /* User card */
   .user-card {
-    @apply flex-center flex-col gap-4 border border-dark-4 rounded-[20px] px-5 py-8;
+    @apply flex-center flex-col gap-4 border border-dark-4 rounded-[20px] px-5 py-8 hover:scale-110 hover:bg-orange-1 transition-transform duration-300;
   }
 }
 

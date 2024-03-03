@@ -83,8 +83,7 @@
 
   .flex-between {
     @apply flex justify-between items-center text-xl font-extrabold text-white p-2 shadow-2xl;
-    border: 2px solid #ffffff;
-    box-shadow: 0 20px 40px rgba(150, 122, 182, 0.4);
+        box-shadow: 0 20px 40px rgba(150, 122, 182, 0.4);
   }
 
   .flex-start {
@@ -241,15 +240,7 @@
   .topbar {
     @apply sticky top-0 z-50 md:hidden bg-orange-1 w-full;
   }
-  .positioned-text {
-    @apply text-5xl font-extrabold text-white p-4 shadow-2xl bg-gradient-to-r;
-    border: px solid #ffffff;
-    box-shadow: 0 20px 40px rgba(150, 122, 182, 0.4);
-  }
-  .positioned-text:hover {
-  transform: scale(1.05);
-  }
-
+  
   /* User card */
   .user-card {
     @apply flex-center flex-col gap-4 border border-dark-4 rounded-[20px] px-5 py-8 hover:scale-110 hover:bg-orange-1 transition-transform duration-300;

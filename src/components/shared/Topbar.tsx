@@ -25,7 +25,7 @@ const Topbar = () => {
             height={100}
             className="w-13 lg:h-12 rounded-full"                  
           />
-          <p className="positioned-text">Huehiw</p>
+          
         </Link>
 
         <div className="flex gap-4">

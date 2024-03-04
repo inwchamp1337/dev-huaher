@@ -30,11 +30,15 @@ const CommentSection: React.FC<Props> = ({ comments, isLoading, onAddComment }) 
       {isLoading ? (
         <p>Loading comments...</p>
       ) : (
-        <ul>
-          {comments.map((comment) => (
-            <li key={comment.id}>{comment.text}</li>
-          ))}
-        </ul>
+        comments.length > 0 ? (
+          <ul>
+            {comments.map((comment) => (
+              <li key={comment.id}>{comment.text}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>No comments</p>
+        )
       )}
       <form onSubmit={handleSubmit}>
         <textarea

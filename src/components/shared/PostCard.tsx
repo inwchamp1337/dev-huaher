@@ -76,7 +76,7 @@ const PostCard = ({ post }: PostCardProps) => {
         />
       </Link>
 
-      <p>
+      <p className="text-dark-3 h3-bold flex-center bottom-10">
         {post.price} ฿ <br/>
       </p>
 

@@ -7,6 +7,14 @@ import { useGetPostById, useGetUserPosts, useDeletePost } from "@/lib/react-quer
 import { multiFormatDateString } from "@/lib/utils";
 import { useUserContext } from "@/context/AuthContext";
 
+interface Comment {
+  id: string;
+  text: string;
+  content: string;
+  commenter: string;
+  timestamp: string;
+}
+
 const PostDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -27,18 +35,26 @@ const PostDetails = () => {
     navigate(-1);
   };
 
+
   // State for comment input and comments list
-  const [comment, setComment] = useState('');
-  const [comments, setComments] = useState([]);
+  const [comment, setComment] = useState<string>('');
+  const [comments, setComments] = useState<Comment[]>([]);
+
 
   // Function to handle comment submission
   const handleCommentSubmit = () => {
-    const timestamp = new Date().toISOString(); // Get current timestamp in ISO 8601 format
-    // Add the new comment to the comments list with user information and timestamp
-    setComments([...comments, { content: comment, commenter: user.name, timestamp }]);
-    // Clear the comment input after submission
+    const timestamp = new Date().toISOString();
+    const newComment: Comment = {
+      id: '222', // ระบุ id ด้วยค่าที่เหมาะสม
+      text: '222', // ระบุ text ด้วยค่าที่เหมาะสม
+      content: comment,
+      commenter: user.name,
+      timestamp: timestamp
+    };
+    setComments([...comments, newComment]);
     setComment('');
   };
+
 
   return (
     <div className="post_details-container">
@@ -111,9 +127,8 @@ const PostDetails = () => {
                 <Button
                   onClick={handleDeletePost}
                   variant="ghost"
-                  className={`ost_details-delete_btn ${
-                    user.id !== post?.creator.$id && "hidden"
-                  }`}>
+                  className={`ost_details-delete_btn ${user.id !== post?.creator.$id && "hidden"
+                    }`}>
                   <img
                     src={"/assets/icons/delete.svg"}
                     alt="delete"

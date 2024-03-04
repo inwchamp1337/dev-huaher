@@ -172,6 +172,10 @@ const PostDetails = () => {
           className="w-full h-32 p-4 mt-4 border border-gray-300 rounded-md resize-none"
         />
 
+        
+        {/* Comment submit button */}
+        <Button onClick={handleCommentSubmit} className="mt-4">Submit Comment</Button>
+
         {/* Display comments */}
         <div className="mt-4">
           <h3 className="body-bold md:h3-bold w-full">Comments:</h3>
@@ -184,13 +188,6 @@ const PostDetails = () => {
             ))}
           </ul>
         </div>
-
-
-
-        {/* Comment submit button */}
-        <Button onClick={handleCommentSubmit} className="mt-4">Submit Comment</Button>
-
-        
 
         <hr className="border w-full border-dark-4/80" />
 

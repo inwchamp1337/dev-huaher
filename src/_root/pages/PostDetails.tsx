@@ -83,7 +83,7 @@ const PostDetails = () => {
             className="post_details-img"
           />
 
-          <p>
+          <p className="text-dark-3 h1-bold flex-center">
             {post.price} ฿ <br/>
           </p>
 

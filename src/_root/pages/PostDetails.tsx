@@ -83,6 +83,10 @@ const PostDetails = () => {
             className="post_details-img"
           />
 
+          <p>
+            {post.price} ฿ <br/>
+          </p>
+
           <div className="post_details-info">
             <div className="flex-between w-full">
               <Link

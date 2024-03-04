@@ -131,7 +131,7 @@
   }
 
   .explore-search {
-    @apply h-12 border-none placeholder:text-light-4 focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 hover:scale-110 hover:bg-white transition-transform duration-300 !important;
+    @apply h-12 border-dark-3 placeholder:text-light-4 focus-visible:ring-0 focus-visible:ring-offset-0 ring-offset-0 !important;
   }
 
   /* Home */

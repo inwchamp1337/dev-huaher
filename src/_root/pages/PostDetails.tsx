@@ -1,14 +1,9 @@
+import { useState } from 'react'; // Import useState hook
 import { useParams, Link, useNavigate } from "react-router-dom";
-
 import { Button } from "@/components/ui";
 import { Loader } from "@/components/shared";
 import { GridPostList, PostStats } from "@/components/shared";
-
-import {
-  useGetPostById,
-  useGetUserPosts,
-  useDeletePost,
-} from "@/lib/react-query/queries";
+import { useGetPostById, useGetUserPosts, useDeletePost } from "@/lib/react-query/queries";
 import { multiFormatDateString } from "@/lib/utils";
 import { useUserContext } from "@/context/AuthContext";
 
@@ -30,6 +25,19 @@ const PostDetails = () => {
   const handleDeletePost = () => {
     deletePost({ postId: id, imageId: post?.imageId });
     navigate(-1);
+  };
+
+  // State for comment input and comments list
+  const [comment, setComment] = useState('');
+  const [comments, setComments] = useState([]);
+
+  // Function to handle comment submission
+  const handleCommentSubmit = () => {
+    const timestamp = new Date().toISOString(); // Get current timestamp in ISO 8601 format
+    // Add the new comment to the comments list with user information and timestamp
+    setComments([...comments, { content: comment, commenter: user.name, timestamp }]);
+    // Clear the comment input after submission
+    setComment('');
   };
 
   return (
@@ -139,6 +147,31 @@ const PostDetails = () => {
       )}
 
       <div className="w-full max-w-5xl">
+        <hr className="border w-full border-dark-4/80" />
+
+        {/* Comment input */}
+        <textarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          placeholder="Write your comment..."
+          className="w-full h-32 p-4 mt-4 border border-gray-300 rounded-md resize-none"
+        />
+        {/* Comment submit button */}
+        <Button onClick={handleCommentSubmit} className="mt-4">Submit Comment</Button>
+
+        {/* Display comments */}
+        <div className="mt-4">
+          <h3 className="body-bold md:h3-bold w-full">Comments:</h3>
+          <ul>
+            {comments.map((comment, index) => (
+              <li key={index}>
+                <strong>{comment.commenter}:</strong> {comment.content}
+                <span className="ml-2 text-gray-500">{new Date(comment.timestamp).toLocaleString()}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <hr className="border w-full border-dark-4/80" />
 
         <h3 className="body-bold md:h3-bold w-full my-10">

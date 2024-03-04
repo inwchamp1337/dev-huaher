@@ -164,13 +164,6 @@ const PostDetails = () => {
       <div className="w-full max-w-5xl">
         <hr className="border w-full border-dark-4/80" />
 
-        {/* Comment input */}
-        <textarea
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-          placeholder="Write your comment..."
-          className="w-full h-32 p-4 mt-4 border border-gray-300 rounded-md resize-none"
-        />
 
         {/* Display comments */}
         <div className="mt-4">
@@ -185,6 +178,19 @@ const PostDetails = () => {
           </ul>
         </div>
 
+
+
+        
+
+        {/* Comment input */}
+        <textarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          placeholder="Write your comment..."
+          className="w-full h-32 p-4 mt-4 border border-gray-300 rounded-md resize-none"
+        />
+
+        
 
 
         {/* Comment submit button */}

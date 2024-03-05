@@ -301,6 +301,7 @@ export async function updatePost(post: IUpdatePost) {
       post.postId,
       {
         caption: post.caption,
+        price: post.price,
         imageUrl: image.imageUrl,
         imageId: image.imageId,
         location: post.location,

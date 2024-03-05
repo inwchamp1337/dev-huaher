@@ -25,6 +25,7 @@ export type INewPost = {
 export type IUpdatePost = {
   postId: string;
   caption: string;
+  price: string;
   imageId: string;
   imageUrl: URL;
   file: File[];

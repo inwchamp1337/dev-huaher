@@ -1,4 +1,8 @@
-## <a name="features">🔋 Features</a>
+
+<span style="color: green">  deploy website :: https://huehiw.vercel.app/
+Guest Email : GuestID@gg.com Password:12345678 Or singup </span>
+
+## <a name="features"> Features</a>
 
 👉 **Authentication System**: ระบบการยืนยันตัวตนที่มั่นคงให้ความปลอดภัยและความเป็นส่วนตัวของผู้ใช้
 
@@ -51,6 +55,5 @@ Install the project dependencies using npm:
 npm install
 ```
 
-**Set Up Environment Variables**
 
-Create a new file named `.env` in the root of your project and add the following content:
+

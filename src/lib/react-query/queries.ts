@@ -25,8 +25,9 @@ import {
   searchPosts,
   savePost,
   deleteSavedPost,
+  createMent,
 } from "@/lib/appwrite/api";
-import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
+import { INewMent, INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
 
 // ============================================================
 // AUTH QUERIES
@@ -240,6 +241,19 @@ export const useUpdateUser = () => {
       });
       queryClient.invalidateQueries({
         queryKey: [QUERY_KEYS.GET_USER_BY_ID, data?.$id],
+      });
+    },
+  });
+};
+
+// สร้าง comment
+export const useCreateMent = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (ment: INewMent) => createMent(ment),
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: [QUERY_KEYS.GET_COMMENT_POST],
       });
     },
   });

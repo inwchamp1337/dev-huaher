@@ -1,7 +1,7 @@
 import { ID, Query } from "appwrite";
 
 import { appwriteConfig, account, databases, storage, avatars } from "./config";
-import { IUpdatePost, INewPost, INewUser, IUpdateUser } from "@/types";
+import { IUpdatePost, INewPost, INewUser, IUpdateUser, INewMent } from "@/types";
 
 // ============================================================
 // AUTH
@@ -541,6 +541,30 @@ export async function updateUser(user: IUpdateUser) {
     }
 
     return updatedUser;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function createMent(ment: INewMent) {
+  try {
+
+    // Create comment
+    const newMent = await databases.createDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.commentsCollectionId,
+      ID.unique(),
+      {
+        username:ment.username,
+        comment:ment.comment,
+      }
+    );
+
+    if (!newMent) {
+      throw Error;
+    }
+
+    return newMent;
   } catch (error) {
     console.log(error);
   }

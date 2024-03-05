@@ -47,3 +47,8 @@ export type INewUser = {
   username: string;
   password: string;
 };
+
+export type INewMent = {
+  username : string;
+  comment : string;
+};

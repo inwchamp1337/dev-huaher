@@ -17,4 +17,7 @@ export enum QUERY_KEYS {
 
   //  SEARCH KEYS
   SEARCH_POSTS = "getSearchPosts",
+
+  // สร้าง comment
+  GET_COMMENT_POST = "getComment"
 }

@@ -1,16 +1,20 @@
+import { useState } from 'react'; // Import useState hook
 import { useParams, Link, useNavigate } from "react-router-dom";
-
 import { Button } from "@/components/ui";
 import { Loader } from "@/components/shared";
 import { GridPostList, PostStats } from "@/components/shared";
-
-import {
-  useGetPostById,
-  useGetUserPosts,
-  useDeletePost,
-} from "@/lib/react-query/queries";
+import { useGetPostById, useGetUserPosts, useDeletePost } from "@/lib/react-query/queries";
 import { multiFormatDateString } from "@/lib/utils";
 import { useUserContext } from "@/context/AuthContext";
+import MentForm from '@/components/forms/MentForm';
+
+interface Comment {
+  id: string;
+  text: string;
+  content: string;
+  commenter: string;
+  timestamp: string;
+}
 
 const PostDetails = () => {
   const navigate = useNavigate();
@@ -31,6 +35,27 @@ const PostDetails = () => {
     deletePost({ postId: id, imageId: post?.imageId });
     navigate(-1);
   };
+
+
+  // State for comment input and comments list
+  const [comment, setComment] = useState<string>('');
+  const [comments, setComments] = useState<Comment[]>([]);
+
+
+  // Function to handle comment submission
+  const handleCommentSubmit = () => {
+    const timestamp = new Date().toISOString();
+    const newComment: Comment = {
+      id: '222', // ระบุ id ด้วยค่าที่เหมาะสม
+      text: '222', // ระบุ text ด้วยค่าที่เหมาะสม
+      content: comment,
+      commenter: user.name,
+      timestamp: timestamp
+    };
+    setComments([...comments, newComment]);
+    setComment('');
+  };
+
 
   return (
     <div className="post_details-container">
@@ -58,6 +83,10 @@ const PostDetails = () => {
             alt="creator"
             className="post_details-img"
           />
+
+          <p className="text-dark-3 h1-bold flex-center">
+            {post.price} ฿ <br/>
+          </p>
 
           <div className="post_details-info">
             <div className="flex-between w-full">
@@ -103,9 +132,8 @@ const PostDetails = () => {
                 <Button
                   onClick={handleDeletePost}
                   variant="ghost"
-                  className={`ost_details-delete_btn ${
-                    user.id !== post?.creator.$id && "hidden"
-                  }`}>
+                  className={`ost_details-delete_btn ${user.id !== post?.creator.$id && "hidden"
+                    }`}>
                   <img
                     src={"/assets/icons/delete.svg"}
                     alt="delete"
@@ -139,6 +167,34 @@ const PostDetails = () => {
       )}
 
       <div className="w-full max-w-5xl">
+        <hr className="border w-full border-dark-4/80" />
+
+        {/* Comment input */}
+        <textarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          placeholder="Write your comment..."
+          className="w-full h-32 p-4 mt-4 border border-gray-300 rounded-md resize-none"
+        />
+
+        
+        {/* Comment submit button */}
+        <MentForm/>
+        <Button onClick={handleCommentSubmit} className="mt-4">Submit Comment</Button>
+
+        {/* Display comments */}
+        <div className="mt-4">
+          <h3 className="body-bold md:h3-bold w-full">Comments:</h3>
+          <ul>
+            {comments.map((comment, index) => (
+              <li key={index}>
+                <strong>{comment.commenter}:</strong> {comment.content}
+                <span className="ml-2 text-gray-500">{new Date(comment.timestamp).toLocaleString()}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <hr className="border w-full border-dark-4/80" />
 
         <h3 className="body-bold md:h3-bold w-full my-10">

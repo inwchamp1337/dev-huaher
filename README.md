@@ -2,8 +2,8 @@
 <span style="color: green">  deploy website :: https://huehiw.vercel.app/
 
 -------------------------------------
-Guest Email : GuestID@gg.com 
-      Password:12345678 
+Guest Email : GuestID@gg.com  <br />
+      Password:12345678  <br />
       Or singup !</span>
 -------------------------------------
 ## <a name="features"> Features</a>

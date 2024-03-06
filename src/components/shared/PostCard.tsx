@@ -68,7 +68,9 @@ const PostCard = ({ post }: PostCardProps) => {
             ))}
           </ul>
         </div>
-
+        <p className="text-dark-3 h3-bold flex-center">
+          {post.price} ฿ <br />
+        </p>
         <img
           src={post.imageUrl || "/assets/icons/profile-placeholder.svg"}
           alt="post image"
@@ -76,9 +78,6 @@ const PostCard = ({ post }: PostCardProps) => {
         />
       </Link>
 
-      <p className="text-dark-3 h3-bold flex-center">
-        {post.price} ฿ <br/>
-      </p>
 
       <PostStats post={post} userId={user.id} />
     </div>

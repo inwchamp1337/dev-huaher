@@ -38,6 +38,11 @@ export const bottombarLinks = [
     label: "Explore",
   },
   {
+    imgURL: "/assets/icons/people.svg",
+    route: "/all-users",
+    label: "kaew",
+  },
+  {
     imgURL: "/assets/icons/bookmark.svg",
     route: "/saved",
     label: "Save",
